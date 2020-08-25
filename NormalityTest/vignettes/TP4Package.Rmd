@@ -1,0 +1,56 @@
+---
+title: "NormalityTest"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{NormalityTest}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r packages, include = FALSE}
+library(NormalityTest)
+```
+
+
+
+# Introduction 
+
+This vignette demonstrates the use of the package `NormalityTest`. The package comes with only one function `normality.df` that performs the Shapiro Wilk test for all the numerical variables of a given data frame. Each test can be accompanied by a graphical presentation  (density and qqplot) giving a piece of visual information.
+
+In the next section, some examples demonstrating the various ways data can be tested and visualized using  `NormalityTest`.
+
+# Exmples
+
+In this section, we will use the famous iris data that, for ease of use, comes loaded with the package.
+
+```{r}
+head(iris)
+```
+
+
+## Exemple 1
+
+```{r}
+normality.df(iris)
+```
+
+
+## Exemple 2
+
+```{r, fig.width=7, fig.height=5}
+normality.df(iris, output = "figure")
+```
+
+## Exemple 3
+
+```{r, fig.width=8}
+Res<-normality.df(iris, output = "message")
+Res$pvalues["PetWid"]
+```

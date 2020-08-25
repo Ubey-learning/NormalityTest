@@ -1,0 +1,26 @@
+Package: NormalityTest
+Title: Normality test for all numerical variables in a data frame
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Anouar",
+           family = "El Ghouch",
+           role = c("aut", "cre"),
+           email = "anouar.elghouch@gmail.com")
+Description: The package provides one and only one function `normality.df`
+  designed to test the normality of all numerical variables on a given 
+  data frame. The (Shapiro Wilk) test can be accompanied by some plots.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    graphics,
+    stats    
+Suggests: 
+    kohonen (>= 3.0.10),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
